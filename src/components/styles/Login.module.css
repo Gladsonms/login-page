@@ -1,0 +1,51 @@
+.heading {
+  text-align: center;
+}
+
+.socialContainer {
+  margin-top: 1rem;
+}
+
+/* Base styles for social icons */
+.socialIcon {
+  display: inline-flex; /* To center the icon inside */
+  justify-content: center;
+  align-items: center;
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Equal to width for a circular shape */
+  border: 2px solid black; /* Black circular border */
+  border-radius: 50%; /* Makes it circular */
+  text-decoration: none; /* Removes default link styling */
+  background-color: white; /* White background */
+  color: black; /* Icon color */
+  font-size: 20px; /* Adjust size for the icon */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect */
+.socialIcon:hover {
+  background-color: black; /* Change background to black */
+  color: white; /* Change icon color to white */
+}
+
+/* Ensure the icons are centered within */
+.socialIcon i {
+  line-height: 1; /* Ensures proper alignment */
+}
+
+/* Custom styling for input fields */
+.squareInput {
+  border-radius: 0 !important; /* Removes border radius (square corners) */
+  border: 2px solid black; /* Black border color */
+  padding: 0.5rem; /* Adds some padding inside the input */
+}
+
+/* Optional: To make sure the focus state also has a black border */
+.squareInput:focus {
+  border-color: black !important;
+  box-shadow: none; /* Removes default shadow on focus */
+}
+
+.loginImage {
+  width: 400px;
+}

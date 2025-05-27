@@ -1,0 +1,138 @@
+.homeContainer {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+  .homeContainer {
+    max-width: 75%;
+  }
+}
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+  }
+  
+  .navButton {
+    background: none;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .navButton:first-child {
+    left: 10px;
+  }
+  
+  .navButton:last-child {
+    right: 10px;
+  }
+  
+  .imageContainer {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image {
+    font-size: 24px;
+    color: #555;
+  }
+  
+  .dots {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+  }
+  
+  .activeDot {
+    background: #555;
+  }
+
+  
+  .footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+
+  .countryFlagImage {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Optional: adjusts image to cover the container */
+  }
+
+  .countryCard {
+    height: 300px; /* Set a fixed height */
+    width: 100%;   /* Ensure the width is responsive */
+    display: flex;
+    flex-direction: column; /* Ensure vertical layout */
+  }
+  
+  .countryFlagImage {
+    height: 100%;
+    max-height: 100px; /* Set a fixed height for the image */
+    width: auto;      /* Make image responsive within the container */
+    object-fit: cover; /* Ensures the image covers the space without distortion */
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
+  }
+
+  /* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.card-shimmer {
+  height: 100%;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+  
