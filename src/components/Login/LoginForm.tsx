@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import styles from "../styles/Login.module.css";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login } from "../../redux/authSlice";
+import { login } from "../../store/userSlice/userSlice";
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ const LoginForm: React.FC = () => {
     return regex.test(password);
   };
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin =  (e: React.FormEvent) => {
     e.preventDefault();
 
     setEmailError("");
@@ -26,23 +26,22 @@ const LoginForm: React.FC = () => {
 
     if (!email.trim()) {
       setEmailError("Username or email is required.");
+      return;
     }
 
     if (!validatePassword(password)) {
       setPasswordError(
         "Password must be at least 8 characters long and include a capital letter, a number, and a symbol."
       );
+      return;
     }
 
-    if (
-      !emailError &&
-      !passwordError &&
-      email.trim() &&
-      validatePassword(password)
-    ) {
-      const user = { email, password };
+    try {
+      const user = { email };
       dispatch(login(user));
       navigate("/home");
+    } catch (error) {
+      setEmailError("Login failed. Please try again.");
     }
   };
 

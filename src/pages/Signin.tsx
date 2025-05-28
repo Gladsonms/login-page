@@ -6,13 +6,13 @@ import SocialLogin from "../components/Login/SocialLogin";
 import Illustration from "../components/Login/Illustration";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
-import type { RootState } from "../redux/store";
-// import { RootState } from "../redux/store";
+import type { RootState } from "../store/store";
+
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const isAuthenticated = useSelector(
-    (state: RootState) => state.auth.isAuthenticated
+    (state: RootState) => state.user.isAuthenticated
   );
 
   if (isAuthenticated) {

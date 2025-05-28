@@ -6,16 +6,21 @@ import styles from "../components/styles/HomePage.module.css";
 import CollapsibleNavbar from "../components/Home/Navbar";
 import WelcomeSection from "../components/Home/Welcome";
 import ImageSliderSection from "../components/Home/ImageSlider";
-import { useLocation } from "react-router";
-//import { useSelector } from "react-redux";
+import { useLocation,useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 import Footer from "../components/Home/Footer";
-// import type { RootState } from "../store/store"; 
+import type { RootState } from "../store/store"; 
 
 const Home: React.FC = () => {
-  // const navigate = useNavigate();
-  // const isAuthenticated = useSelector(
-  //   (state: RootState) => state.isAuthenticated
-  // );
+  const navigate = useNavigate();
+  
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.user?.isAuthenticated ?? false
+  );
+
+
+  console.log("isAuthenticated", isAuthenticated);
+  
 
   const location = useLocation();
 
@@ -24,9 +29,9 @@ const Home: React.FC = () => {
   const { countries, loading, hasMore, loadMoreCountries } =
     useCountries(region);
 
-  // if (!isAuthenticated) {
-  //   navigate("/login");
-  // }
+  if (!isAuthenticated) {
+    navigate("/login");
+  }
 
   return (
     <Container className={styles.homeContainer}>

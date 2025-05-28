@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { logout } from "../../redux/authSlice";
 import { useDispatch } from "react-redux";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { logout } from "../../store/userSlice/userSlice";
 
 function CollapsibleNavbar() {
   const navigate = useNavigate();
