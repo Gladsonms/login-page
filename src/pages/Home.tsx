@@ -10,6 +10,7 @@ import { useLocation,useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import Footer from "../components/Home/Footer";
 import type { RootState } from "../store/store"; 
+import "../styles/theme.css";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -19,9 +20,7 @@ const Home: React.FC = () => {
   );
 
 
-  console.log("isAuthenticated", isAuthenticated);
   
-
   const location = useLocation();
 
   const queryParams = new URLSearchParams(location.search);
@@ -57,10 +56,11 @@ const Home: React.FC = () => {
             className="loadMoreButton pt-3 pb-3 pl-6 pr-6"
             onClick={loadMoreCountries}
             style={{
-              backgroundColor: "black",
+              backgroundColor: "var(--primary-color)",
               border: "none",
-              borderRadius: "0",
-              color: "white",
+              borderRadius: "var(--border-radius-none)",
+              color: "var(--text-light)",
+              transition: "var(--transition-normal)",
             }}
           >
             Load More
